@@ -17,15 +17,17 @@ html
   body
 
     header
-      h1 morishitter blog
+      h1
+        a(href='/') morishitter blog
       p Designing for Web of the future
 
     div.container
-      #main
+      section#main
         != content
 
     footer
-      p.text-center Copyright &copy; 2014 Masaaki Morishita
+      p.text-center Copyright &copy; 2014 
+        a(href='http://morishitter.github.io') Masaaki Morishita
 
     //- add other scripts through require.js, not here
     script(data-main="js/main", src="js/require.js")
