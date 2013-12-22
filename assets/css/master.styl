@@ -1,0 +1,64 @@
+@import '_settings'
+
+normalize()
+base()
+
+// base styles on everything, for prototyping
+framework()
+
+html
+  font-size: 6.25%
+body
+  //border-top: .5em solid turquoise
+  //background-color: #f2f2f2
+  font-size: 16em
+  line-height: 1.4em
+
+p
+  font-size: 1em
+
+header
+  background: ca-green
+  width: 100%
+  text-align: center
+
+  h1
+    color: white
+    padding-top: 2em
+    font-weight: 300
+    font-size: 3em
+    @media(max-width: 992px)
+      padding-top: 1em
+  p
+    color: white
+    padding-bottom: 5em
+    @media(max-width: 992px)
+      padding-bottom: 2.5em
+
+#main
+  padding: 1em
+
+#posts
+  reset-list()
+  margin: 5em auto
+  @media(min-width: 992px)
+    padding 0 2em
+
+  h2
+    margin-bottom: 2em
+    line-height: 1.4em
+
+  li
+    margin: 1em 0
+    fs: 1.5em
+    a
+      color: ca-green
+  a
+    color: ca-green
+  img
+    @media(max-width: 768px)
+      height: 85%
+      width: 85%
+
+footer
+  margin: 4em 0
