@@ -8,3 +8,5 @@ js = ["http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"]
 require js, ->
   $ ->
     console.log 'jquery loaded, dom ready <-- via assets/js/main.coffee'
+
+    $('header').addClass 'animated fadeInDown'
