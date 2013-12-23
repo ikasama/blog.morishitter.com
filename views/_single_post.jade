@@ -11,9 +11,10 @@ html
     
     link(rel='stylesheet', href='/css/bootstrap.min.css')
     link(rel='stylesheet', href='/css/animate.min.css')
+    link(rel='stylesheet', href='/css/font-awesome.min.css')
     link(rel='stylesheet', href='/css/master.css')
     link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Open+Sans')
-    link(rel='shortcut icon', href='/img/ikasama.jpeg')
+    link(rel='shortcut icon', href='/blog-favicon.ico')
     
   body
     header
@@ -24,8 +25,14 @@ html
     div.container
       article#posts
         h1= post.title
-        each tag in post.tags
-          span= tag
+        p.time-tags
+          time
+            i.fa.fa-calendar
+            span= post.date
+          each tag in post.tags
+            i.fa.fa-tags
+            span= tag
+
 
         != content
         a(href='/') &laquo; back to index
