@@ -24,7 +24,9 @@ html
     div.container
       article#posts
         h1= post.title
-        time= post.date
+        each tag in post.tags
+          span= tag
+
         != content
         a(href='/') &laquo; back to index
 
