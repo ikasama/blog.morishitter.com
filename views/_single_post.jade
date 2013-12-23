@@ -23,6 +23,7 @@ html
     div.container
       article#posts
         h1= post.title
+        time= post.date
         != content
         a(href='/') &laquo; back to index
 
