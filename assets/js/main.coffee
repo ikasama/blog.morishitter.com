@@ -9,4 +9,4 @@ require js, ->
   $ ->
     console.log 'jquery loaded, dom ready <-- via assets/js/main.coffee'
 
-    $('header').addClass 'animated fadeInDown'
+    # $('header').addClass 'animated fadeInDown'
