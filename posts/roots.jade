@@ -1,0 +1,73 @@
+---
+title: 静的サイトジェネレータ「roots」でブログを作った
+date: 01 Jan 2014
+layout: ../views/_single_post.jade
+tags: [roots]
+---
+
+:markdown
+  あけましておめでとうございます。新年だし（？）、新しくブログを作った。
+
+  ## 静的サイトジェネレータ
+  新しくブログを作るにあたって、静的サイトジェネレータなるものを使うことにした。[jekyll](http://jekyllrb.com/)はいろんな人が使ってるし、
+  1番有名な気がしてる。他には、[middleman](http://middlemanapp.com/)も日本語の情報が多くて良さそう。
+  でも、なんとなくgemに頼りたくなかったので（普段Sass使ってるけど）、[roots](http://roots.cx/)というものを使った。
+  今となっては、[yoeman](http://yeoman.io/)の[generator-weblog](https://github.com/stephenplusplus/generator-weblog)でよかったなーとか思ってる。
+
+  ## roots
+  rootsはnode製の静的サイトジェネレーター。npmでインストールできる。
+
+      $ npm install -g roots
+
+  npmが入っていない人は[ここ](http://nodejs.org/download/)からnode.jsをインストールする。
+
+      $ roots new project-name
+
+  でプロジェクトのテンプレートを作成できる。
+
+  ブログのテンプレートは
+
+      $ roots new blog-name --blog
+
+  ***
+
+  rootsは、デフォルトで[Jade](http://jade-lang.com/)、[Stylus](http://learnboost.github.io/stylus/)、[CoffeeScript](coffeescript.org/)
+  が使える。ファイルのコンパイルは
+
+      $ roots compile
+
+  Jade, Stylus, CoffeeScriptをコンパイルして/publicに出力される。ついでに、HTML, CSS, JavaScriptのMinifyもしてくれる。
+  また、
+
+      $ roots watch
+
+  で、ファイルを監視して保存時に自動的にコンパイルできる。ローカルサーバーがデフォルトでポート番号1111番で起動する。watchではMinifyはされない。
+
+  ***
+
+  rootsでは、[axis](http://roots.cx/axis/)というStylusのMixin集が使える。normalize.cssをインクルードできたり、gridも設定できる。
+
+      grid()
+
+      column-width = 60px
+      gutter-width = 20px
+      columns = 12
+      total-width = 100%
+
+      .main
+        column(9)
+
+      .sidebar
+        column(3)
+
+  columnsでgridの分割数を設定して、column()で使える。
+  他にも、ベンダープレフィックスが自動で付けれたり、ボタンとか通知とかのUIパーツもある。
+  そのうち[nib](http://visionmedia.github.io/nib/)も触ってみる。
+
+  ## 最後に
+  今回、初めて静的サイトジェネレータを使った。簡単なサイトを作るのにはすごく便利で、どれか使えるようにしておくといい気がする。
+  WordpressのようなCMSとは違い、シンプルでカスタマイズしやすかった。
+
+  去年の1月1日に[ブログ（はてなブログ）](ikasama.hatenablog.jp)を始めた。
+  今後、このブログとの使い分けについてはあんまり考えてないけど、いずれ、僕のコンテンツ力が高まってきたら（？）完全にこのブログだけにする予定。
+  「情報は発信するところに集まる」って言うし、これからはもっと更新ペースを上げていこうと思う。
