@@ -2,12 +2,33 @@
 title: Hello New World
 date: 01 Jan 2014
 layout: ../views/_single_post.jade
-tags: []
+tags: [roots]
 ---
 
 :markdown
-  あけましておめでとうございます。
+  あけましておめでとうございます。新年だし、新しくブログを作った。
 
-      .hoge {
-        margin: 10px
-      }
+  ## 静的サイトジェネレータ
+  新しくブログを作るにあたって、静的サイトジェネレータなるものを使うことにした。[jekyll](http://jekyllrb.com/)はいろんな人が使ってるし、
+  1番有名な気がしてる。他には、[middleman](http://middlemanapp.com/)も日本語の情報が多くて良さそう。
+  でも、なんとなくgemに頼りたくなかったので（普段Sass使ってるけど）、[roots](http://roots.cx/)というものを使った。
+  今となっては、[yoeman](http://yeoman.io/)の[generator-weblog](https://github.com/stephenplusplus/generator-weblog)でよかったなーとか思ってる。
+
+  ## roots
+  rootsはnpmでインストールできる。
+
+      $ npm install -g roots
+
+  npmが入っていない人は[ここ](http://nodejs.org/download/)からnode.jsをインストールする。
+
+      $ roots new project-name
+
+  でプロジェクトのテンプレートを作成できる。
+
+  ブログのテンプレートは、
+
+      $ roots new blog-name --blog
+
+  ## rootsの特徴
+  - デフォルトで[jade](http://jade-lang.com/)、[Stylus](http://learnboost.github.io/stylus/)、[CoffeeScript](coffeescript.org/)
+  が使える
