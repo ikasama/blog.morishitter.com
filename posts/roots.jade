@@ -2,7 +2,7 @@
 title: 静的サイトジェネレータ「roots」でブログを作った
 date: 01 Jan 2014
 layout: ../views/_single_post.jade
-tags: [roots]
+tags: [roots, CSS]
 ---
 
 :markdown
@@ -15,7 +15,10 @@ tags: [roots]
   今となっては、[yoeman](http://yeoman.io/)の[generator-weblog](https://github.com/stephenplusplus/generator-weblog)でよかったなーとか思ってる。
 
   ## roots
-  rootsはnode製の静的サイトジェネレーター。npmでインストールできる。
+  rootsはnode製の静的サイトジェネレーター。
+  （公式サイト: [roots | where it all begins](http://roots.cx)）
+
+  npmでインストールできる。
 
       $ npm install -g roots
 
@@ -29,6 +32,8 @@ tags: [roots]
 
       $ roots new blog-name --blog
 
+  で、作成。これに、タグ機能付けたり、レスポンシブ対応したり、CSSアニメーション付けたりした。
+
   ***
 
   rootsは、デフォルトで[Jade](http://jade-lang.com/)、[Stylus](http://learnboost.github.io/stylus/)、[CoffeeScript](coffeescript.org/)
@@ -41,11 +46,18 @@ tags: [roots]
 
       $ roots watch
 
-  で、ファイルを監視して保存時に自動的にコンパイルできる。ローカルサーバーがデフォルトでポート番号1111番で起動する。watchではMinifyはされない。
+  で、ファイルを監視して保存時に自動的にコンパイルできる。ローカルサーバーがデフォルトでポート1111番で起動する。watchではMinifyはされない。
+  watchしてると、保存時に自動でブラウザがリロードするのが気持ちいい。
+
+  他にも、[heroku toolbelt](https://toolbelt.heroku.com/)をインストールしていると、
+
+      $ roots deploy
+
+  で、一発でherokuにデプロイできる。
 
   ***
 
-  rootsでは、[axis](http://roots.cx/axis/)というStylusのMixin集が使える。normalize.cssをインクルードできたり、gridも設定できる。
+  また、rootsでは、[axis](http://roots.cx/axis/)というStylusのMixin集が使える。normalize.cssをインクルードできたり、gridも設定できる。
 
       grid()
 
@@ -64,10 +76,12 @@ tags: [roots]
   他にも、ベンダープレフィックスが自動で付けれたり、ボタンとか通知とかのUIパーツもある。
   そのうち[nib](http://visionmedia.github.io/nib/)も触ってみる。
 
+  rootsは、[公式サイト](http://roots.cx)に[チュートリアル動画](http://www.youtube.com/watch?v=47Qv6djtKlY&feature=youtu.be)のリンクがあるので、見てみるといいかも。
+
   ## 最後に
   今回、初めて静的サイトジェネレータを使った。簡単なサイトを作るのにはすごく便利で、どれか使えるようにしておくといい気がする。
   WordpressのようなCMSとは違い、シンプルでカスタマイズしやすかった。
 
-  去年の1月1日に[ブログ（はてなブログ）](ikasama.hatenablog.jp)を始めた。
+  去年の1月1日に[ブログ（はてなブログ）](http://ikasama.hatenablog.jp)を始めた。
   今後、このブログとの使い分けについてはあんまり考えてないけど、いずれ、僕のコンテンツ力が高まってきたら（？）完全にこのブログだけにする予定。
   「情報は発信するところに集まる」って言うし、これからはもっと更新ペースを上げていこうと思う。
