@@ -1,48 +1,7 @@
 @import '_settings'
-
-normalize()
-base()
-
-// base styles on everything, for prototyping
-framework()
-
-html
-  font-size: 6.25%
-
-body
-  font-size: 16em
-  line-height: 1.4em
-
-p
-  font-size: 1em
-
-header
-  background: blue
-  width: 100%
-  text-align: center
-  //font-family: 'Open Sans', sans-serif
-  //font-family: 'Nova Square', cursive
-
-  h1
-    color: white
-    padding-top: 2em
-    font-weight: 300
-    font-size: 2.5em
-    //font-family: 'Open Sans', sans-serif
-    font-family: 'Nova Square', cursive
-
-    @media(max-width: 750px)
-      padding-top: 1em
-    a, a:hover
-        color: white
-        border-bottom-width: 0
-  p
-    color: white
-    padding-bottom: 4em
-    font-size: 1.2em
-    font-family: 'Nova Square', cursive
-    @media(max-width: 750px)
-      padding-bottom: 2.5em
+@import '_base'
+@import '_header'
+@import '_footer'
 
 #main
   padding: 1em
@@ -130,9 +89,3 @@ header
   time
     margin-right: 1em
 
-footer
-  margin: 5em 0
-  font-family: 'Open Sans', sans-serif
-  font-size: 1em
-  @media(max-width: 750px)
-    font-size: .8em
