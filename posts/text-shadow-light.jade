@@ -1,0 +1,43 @@
+---
+title: text-shadowで光っているような文字を表現する
+date: 3 Jan 2014
+layout: ../views/_single_post.jade
+tags: [CSS, Design, Tips]
+---
+
+:markdown
+  新年一発目。あけましておめでとうございます。
+
+  このブログのタイトルに何かしらのホバーアクションを付けたかったので光らせてみた。
+  [text-shadow](http://www.w3.org/TR/css-text-decor-3/#text-shadow-property)は
+  テキストに影を指定するプロパティで、要素のテキスト及びtext-decotationに適用する。
+  また、IE10未満では実装されていないので注意。
+
+  指定方法は、
+
+      text-shadow: 左右へのオフセット 上下のオフセット ブラーの幅 shadowの色;
+
+  また、カンマ区切りで複数指定することもできる。
+
+      text-shadow: 0 0 3px #fff,
+                   0 0 5px #fff,
+                   0 0 9px #ff3bal;
+
+  このtext-shadowを使って、影の色をテキストと同じにすると光っているように見せることができる。
+  今回はこのように指定した。
+
+      text-shdow 0 0 15px #fff
+
+  ![text-shdowでテキストが光っているような表現](/img/text-shadow-light/text-shadow-light.png)
+
+  こんな感じ。
+
+  また、このようなCSS3のTipsは書籍「[CSS3 逆引きデザインレシピ](http://www.amazon.co.jp/CSS3%E9%80%86%E5%BC%95%E3%81%8D%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3%E3%83%AC%E3%82%B7%E3%83%94-%E5%8E%9F-%E4%B8%80%E6%88%90/dp/4798132195)」にいっぱい載ってる。
+  （解説はあんまり詳しくない気もするけど）すごく便利。
+
+  ***
+
+  今までCSSは、[Twitter Bootstrap](http://getbootstrap.com/)をずっと使っていて、
+  [OOCSS](http://oocss.org/)で言うところの**スキン**の部分はほとんど書かずにいた。
+  CSS3から表現の幅がぐっと広がったし、今後はいろんなプロパティを積極的に使っていきたいなーと思ってる（現状そうはいかないが）。
+  また、CSSのプロパティごとのレンダリングコストを考えた上で、デザインをしていけたらと思っている。
