@@ -1,17 +1,15 @@
 ---
 title: text-shadowで光っているような文字を表現する
-date: 3 Jan 2014
+date: 12 Jan 2014
 layout: ../views/_single_post.jade
 tags: [CSS, Design, Tips]
 ---
 
 :markdown
-  新年一発目。あけましておめでとうございます。
-
   このブログのタイトルに何かしらのホバーアクションを付けたかったので光らせてみた。
   [text-shadow](http://www.w3.org/TR/css-text-decor-3/#text-shadow-property)は
   テキストに影を指定するプロパティで、要素のテキスト及びtext-decotationに適用する。
-  また、IE10未満では実装されていないので注意。
+  IE10未満では実装されていないので注意。
 
   指定方法は、
 
@@ -28,9 +26,9 @@ tags: [CSS, Design, Tips]
 
   今回はこのように指定した。
 
-      text-shdow 0 0 15px #fff
+      text-shdow: 0 0 15px #fff;
 
-  ![text-shdowでテキストが光っているような表現](/img/text-shadow-light/text-shadow-light.png)
+  ![text-shdowでテキストが光っているような表現](/img/text-shadow/text-shadow-light.png)
 
   こんな感じ。
 
