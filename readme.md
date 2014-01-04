@@ -1,6 +1,6 @@
 blog.morishitter.com
 =================
 
-morishitter blog
+Masaaki Morishita's blog site
 
-Powered by Roots
+[http://blog.morishitter.com](http://blog.morishitter.com)
