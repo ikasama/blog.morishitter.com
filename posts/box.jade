@@ -1,0 +1,53 @@
+---
+title: pharファイルビルドツール「Box」
+date: 17 Jan 2014
+layout: ../views/_single_post.jade
+tags: [PHP]
+---
+
+:markdown
+  [Box](http://box-project.org/)はpharファイルをビルドするためのツール。
+  日本語の情報が全然なかったのでブログ書いた。
+
+  ***
+
+  PHPの[Goutte](https://github.com/fabpot/goutte)っていうスクレイピングライブラリを使おうとしたときのこと。
+  READMEに「Download the Goutte.phar file and you're done!」って書いてあるんだけど、pharファイルが見つからない。
+  [コミットログ](https://github.com/fabpot/Goutte/commit/953ddb7728f4fa8f069e54f19b1f953d05849a32)を見てみたら、
+  「pharファイル消したよ！」って書いてあって、代わりに**box.json**っていうファイルがあった。
+
+  ![Goutteのcommitログ](/img/box/fabpot_Goutte.png)
+
+  ## Box
+  [Box](http://box-project.org/)はpharファイルをビルドするためのツール。
+  Goutteとか、[Doctrine Migrations](https://github.com/doctrine/migrations)とか、pharファイルでの提供をやめて、
+  Boxを使ってユーザーにビルドさせるものが増えてきている（？）
+
+  Boxのインストールは簡単。
+
+      $ curl -s http://box-project.org/installer.php | php
+
+  composerからもインストールできるけど、公式サイトでpharとしてインストールするのをおすすめしてる。
+
+  ビルドは、box.jsonのあるディレクトリで
+
+      $ php box.phar build
+
+  バージョン確認は
+
+      $ php box.phar --versions
+
+  ソフトウェアが新しいバージョンになったときは
+
+      $ php box.phar update
+
+  で、アップデートできる。
+
+  ## まとめ
+  Boxを使っていなくても、[Guzzle](https://github.com/guzzle/guzzle)はpharをスタブするスクリプトを用意するようにしたりしてる。
+  少し前まではpharファイルとして提供されていたものが、ここ最近自分でビルドさせるようになってきてるなーと思う。
+
+  なんでユーザーにpharをビルドさせるようになったのか調べてみたら、[Doctrine MigrationsのConversation](https://github.com/doctrine/migrations/pull/97)
+  に、pharファイルを作るために**不要なスクリプトや、現時点で壊れているスクリプトを除くため**って書いてあった。
+
+
