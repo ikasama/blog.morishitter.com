@@ -1,9 +1,131 @@
 ---
-title: Stylus入門のまとめ
+title: Stylus入門したときのまとめ
 date: 20 Jan 2014
 layout: ../views/_single_post.jade
 tags: [CSS, Stylus]
 ---
 
 :markdown
+  [このブログを作るとき](/posts/roots)に初めてStylusを書いた。
+  Sassと比べると日本語の情報が少ないと感じたので、
+  Stylusを始めるときに、**最低限これだけ知っておきたい**書き方をまとめてみた。
+
+  ## Stylusとは
+  [Stylus](http://learnboost.github.io/stylus/)はnode製のCSSプリプロセッサ。
+  node.jsのexpressや、jadeと同じ人が開発してる。
+  **SassとLessより後発で、2つの良いとこ取り**をしていて、機能も豊富（らしい）。
+
+  インストールはnpmから
+
+      $ npm install -g stylus
+
+  記述はscss記法のように、CSSっぽい書き方と
+      
+      .hoge {
+        color: red;
+
+        &:hover {
+          color: blue;
+        }
+      }
+
+  sass記法のように、インデントベースの記述もできる。
+  :（コロン）や;（セミコロン）も省略可能。
+  せっかくなのでこの記法で書いてみた。
+
+      .hoge
+        color red
+
+        &:hover
+          color blue
+
+  CSSっぽい書き方とインデントの書き方ができるが、拡張子「.styl」のみで、記法を混在させることもできる。
+
+  ## 変数と演算
+  変数に値を代入しておくことで、変数名で任意の場所から値を参照することができる。
+
+      base-color = #00a6fc
+
+      .title
+        color base-color
+
+  "@"をつけると、直前のそのプロパティを参照することもできる。
+  かっこ必要。
   
+  演算もできる。
+
+      .container
+        width 100%
+
+        .sidebar
+          width (@width * 0.3)
+
+  ## 条件分岐と繰り返し
+  if/else文
+
+      liquid = true
+
+      .hoge
+        if liquid
+          width 100%
+        else
+          width 960px
+        ...
+
+  for/in文
+
+      array = 1 2 3 4
+
+      for num in array
+        .mg-{num * 5}
+          margin num * 5px
+
+  1行目が**配列の定義**。,（カンマ）区切ることもできる。また、**変数の展開**は{}でできる。
+
+
+  ## パーシャル
+  StylusでもSassと同じように、ファイル名の前に\_（アンダースコア）を付けることで、コンパイル後にCSSファイルが生成されない。
+  Sassと違って、@import するときに_を省略することはできない。
+
+      @import '_setting'
+
+      .hoge
+        ...
+
+  ## ミックスイン
+  ミックスインの定義と参照方法は以下の通り。
+
+      box-sizing(arg)
+        -webkit-box-sizing arg
+        -moz-box-sizing arg
+        box-sizing arg
+
+      .hoge
+        box-sizing border-box
+
+  Sassのように、@mixinとか@includeとか付けなくてもいい。
+  ミックスインを参照しているところを見ると、プロパティと同じように使えている（**透過的mixin**）。
+  Stylusでは、**CSSと全く同じ記述方法で抽象化**することができる。
+
+  ## 継承（extend）
+  Stylusには、extendの機能もある。
+
+      .btn
+        ...
+        ...
+
+      .btn-blue
+        @extend .btn
+        background-color
+
+  ちなみに、@extendでも@extendsのどっちでもいい。
+
+  ## Stylusを使ってみて
+  個人的に、GruntやCoffeeScript、Jade、Yoeman、そしてStylus、フロント開発で使うツールをすべてnpmで管理できるのはいいと思った。
+
+  StylusはかなりCSS
+
+  ## 参考にしたサイト
+  - [公式サイト](http://learnboost.github.io/stylus/)
+  - [stylus ドキュメント日本語訳](https://github.com/enja-oss/stylus)
+  - [Stylusが目指すCSSプリプロセッサ](http://sssslide.com/speakerdeck.com/ahomu/stylusgamu-zhi-sucsspuripurosetusa)
