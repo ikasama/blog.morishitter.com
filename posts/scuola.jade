@@ -1,6 +1,6 @@
 ---
 title: 研究会ポスター用CSSフレームワーク「Scuola」
-date: 11 Feb 2014
+date: 18 Feb 2014
 layout: ../views/_single_post.jade
 tags: [CSS, Framework, Sass]
 ---
@@ -14,13 +14,15 @@ tags: [CSS, Framework, Sass]
   Scuola（スクォーラ）はイタリア語で「学堂」って意味。
   名前付に深い考えはない。
 
-  bowerでインストールできる。`bower install scuola`
+  インストールはbowerからできる。でも、まだドキュメントとか作ってないし使えたもんじゃない。
 
-  まだドキュメントとかないし、使えたもんじゃない。
+      bower install scuola
+
 
   HTML+CSSで作ると言っても最終的には紙になるので、レンダリングのパフォーマンスは考慮しなかった。
   `.pd-10`とか`.font-bold`とかの汎用クラスを大量に書いてる。
-  他には印刷対応ってことで、floadプロパティではなく`display: inline-block;`でグリッド作るようにしたりとか。
+  他には印刷対応ってことで、floadプロパティではなく`display: inline-block;`でグリッド作るようにしたりとか、
+  ルート要素に`box-sizing: border-box`を指定したりとか。
 
   今後はグリッドをフレキシブルボックスレイアウトにする予定。
   ちなみにFlexboxのプロパティ`display: flexbox`, `flex-flow`はIE10未満では実装されていない。
@@ -28,4 +30,4 @@ tags: [CSS, Framework, Sass]
 
   Scuolaを使うことで、いい感じに余白がついたレイアウトをすることができる。
   研究会のポスターでよく見るような、枠線とテキストの間にパディングが全くないようなダサいことにはならない。
-  デザインをあまり知らない人が、Scuolaで見やすい、伝わりやすいポスターを作れるのを目指す。
+  デザインをあまり知らない人が、Scuola使うことでで見やすく、伝わりやすい研究ポスターを作れることを目指す。
